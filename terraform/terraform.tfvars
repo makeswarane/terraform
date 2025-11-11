@@ -8,4 +8,11 @@ instance_type   = "t3.micro"
 key_name        = "terraform"
 db_name         = "appdb"
 db_username     = "dbuser"
-db_password     = "appdp@123!"
+db_password     = "StrongPassw0rd!"
+
+user_data_base64 = filebase64("${path.module}/user-data.sh")
+
+  tags = {
+    Name = "WebServer"
+  }
+}
