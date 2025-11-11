@@ -15,4 +15,3 @@ user_data_base64 = filebase64("${path.module}/user-data.sh")
   tags = {
     Name = "WebServer"
   }
-}
