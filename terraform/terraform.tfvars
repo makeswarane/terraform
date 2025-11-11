@@ -10,7 +10,7 @@ db_name         = "appdb"
 db_username     = "dbuser"
 db_password     = "StrongPassw0rd!"
 
-user_data_base64 = filebase64("${path.module}/user-data.sh")
+user_data = file("${path.module}/user-data.sh")
 
   tags = {
     Name = "WebServer"
