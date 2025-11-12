@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-ARG BUILD_ENV
+ARG BUILD_ENV=development
 RUN npm run build -- --configuration $BUILD_ENV
 
 # ---------- Stage 2: Serve ----------
