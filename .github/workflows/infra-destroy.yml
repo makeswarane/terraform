@@ -5,7 +5,7 @@ on:
 
 env:
   AWS_REGION: ap-south-1
-  TF_BUCKET: "terraform-automation1"
+  TF_BUCKET: "terraform-automation2"
   TF_KEY: "terraform/state.tfstate"
   TF_LOCK_TABLE: "myapp-terraform-lock"
   EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}

@@ -25,7 +25,7 @@ env:
   STAGING_PORT: 8082
   PROD_PORT: 8083
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-  EC2_IP: 13.233.149.29
+  # EC2_IP: 13.233.149.29
 jobs:
 
   # ------------------- 1️⃣ Test Stage -------------------
@@ -112,7 +112,7 @@ jobs:
 
       - name: Fetch Terraform Output (EC2 IP)
         run: |
-          curl -L -o tfstate.json https://terraform-automation1.s3.us-east-1.amazonaws.com/terraform/state.tfstate
+          curl -L -o tfstate.json https://terraform-automation2.s3.us-east-1.amazonaws.com/terraform/state.tfstate
           export EC2_IP=$(jq -r '.outputs.ec2_public_ip.value' tfstate.json)
           echo "EC2_IP=$EC2_IP" >> $GITHUB_ENV
 
@@ -164,7 +164,7 @@ jobs:
 
       - name: Fetch Terraform Output (EC2 IP)
         run: |
-          curl -L -o tfstate.json https://terraform-automation1.s3.us-east-1.amazonaws.com/terraform/state.tfstate
+          curl -L -o tfstate.json https://terraform-automation2.s3.us-east-1.amazonaws.com/terraform/state.tfstate
           export EC2_IP=$(jq -r '.outputs.ec2_public_ip.value' tfstate.json)
           echo "EC2_IP=$EC2_IP" >> $GITHUB_ENV
 
